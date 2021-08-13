@@ -41,6 +41,7 @@ function checkEventHandlers(){
     }
     else{
         checkEventHandler();
+        valid.innerText = "";
     }
 }
 
