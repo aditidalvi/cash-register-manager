@@ -29,15 +29,36 @@ function checkEventHandlers(){
     if((bill_amount.value < 0) || (cashGiven.value < 0) ||  (isNaN(bill_amount.value)) || (isNaN(cashGiven.value)) || (bill_amount.value.length == 0)){
         console.log("enter valid amount and cash given to continue ");
         valid.innerText = "Enter valid bill amount and cash given to continue ";
+        twoThousand.innerText = "";
+        fiveHundred.innerText = "";
+        hundred.innerText = "";
+        twenty.innerText = "";
+        ten.innerText = "";
+        five.innerText = "";
+        one.innerText="";
     }
-    else if(bill_amount.value > cashGiven.value){
+    else if(bill_amount.value.length > cashGiven.value.length){
         console.log("Cash is less than bill, please enter right amount")
         valid.innerText = "Cash is less than bill, please enter right amount";
+        twoThousand.innerText = "";
+        fiveHundred.innerText = "";
+        hundred.innerText = "";
+        twenty.innerText = "";
+        ten.innerText = "";
+        five.innerText = "";
+        one.innerText="";
     }
    
     else if(cashGiven.value === bill_amount.value){
         console.log('No amount should be returned ')
         valid.innerText = 'No amount should be returned ';
+        twoThousand.innerText = "";
+        fiveHundred.innerText = "";
+        hundred.innerText = "";
+        twenty.innerText = "";
+        ten.innerText = "";
+        five.innerText = "";
+        one.innerText="";
     }
     else{
         checkEventHandler();
@@ -106,13 +127,16 @@ if (hundredCount !== 0){
     hundred.innerText = hundredCount;
 }
 
+
 if(twentyCount !== 0){
     twenty.innerText = twentyCount;
 }
 
+
 if(tenCount !== 0){
     ten.innerText = tenCount;
 }
+
 
 if(fiveCount !== 0){
     five.innerText = fiveCount;
@@ -121,6 +145,7 @@ if(fiveCount !== 0){
 if(oneCount !== 0){
     one.innerText = oneCount;
 }
+
  
    
 }
