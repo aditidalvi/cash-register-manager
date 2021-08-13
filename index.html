@@ -14,6 +14,7 @@
           font-family: 'Noto Sans';
           text-align: center;
           font-weight: bold;
+         background-color: seashell;
         }
 
         input{
@@ -25,6 +26,7 @@
           color:black;
           text-align: center;
           font-size: large;
+          font-weight: 600;
          
         }
 
@@ -53,7 +55,7 @@
           width: 43%;
           font-size: large;
           color: black;
-          background-color: silver;
+          background-color: seashell;
           font-weight: bold;
         }
 
@@ -67,14 +69,14 @@
     <h1> Cash Register Manager </h1>
     <h3>Enter the bill amount and cash given by the customer and know minimum number of notes to return.</h3>
     <br/>
-    <p style="font-weight: bold;">Bill Amount:</p>
+    <p style="font-weight: bold; ">Bill Amount:</p>
     <input id="bill-amount" type="text">
     <br/>
     <p style="font-weight: bold;">Cash Given:</p>
     <input id="cash-given" type="text">
     <button id="check">Check</button>
     <br/>
-    <div id="valid-amount" style=" width:60%; padding:0.2rem;font-weight: bolder; color:darkred;  font-size: larger; text-align: center;"></div>
+    <div id="valid-amount" style=" width: 60%; padding:0.2rem;font-weight: bolder; color:red;  font-size: larger; text-align: center;"></div>
     <br/>
     <br/>
     <div style="font-weight: bold;">Return Change</div>
