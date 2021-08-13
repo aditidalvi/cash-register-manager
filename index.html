@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <title>Cash Register Manager</title>
+    <style>
+        table, th, td {
+          border:2px solid black;
+          border-collapse: collapse;
+          padding: 1rem;
+          font-family: 'Noto Sans';
+          text-align: center;
+          font-weight: bold;
+        }
+
+        input{
+          width:40%;
+          padding:1rem;
+          height:2vh;
+          margin-top: 0.3rem;
+          display: block;
+          color:black;
+          text-align: center;
+          font-size: large;
+         
+        }
+
+        .container{
+          width:80%;
+          margin: 2rem auto;
+          background-color:mediumseagreen;
+          padding: 2rem;
+          font-size: large;
+          font-family: 'Noto Sans','sans-serif';
+ 
+          
+        }
+
+        body{
+          background-image: url(money.jpg);
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        button{
+          margin: 2rem;
+          padding: 1rem;
+          font-family: 'Noto Sans','sans-serif';
+          border-radius: 0.5px;
+          width: 43%;
+          font-size: large;
+          color: black;
+          background-color: silver;
+          font-weight: bold;
+        }
+
+       
+
+        </style>
+</head>
+<body>
+    <div class="container">
+    <center>
+    <h1> Cash Register Manager </h1>
+    <h3>Enter the bill amount and cash given by the customer and know minimum number of notes to return.</h3>
+    <br/>
+    <p style="font-weight: bold;">Bill Amount:</p>
+    <input id="bill-amount" type="text">
+    <br/>
+    <p style="font-weight: bold;">Cash Given:</p>
+    <input id="cash-given" type="text">
+    <button id="check">Check</button>
+    <br/>
+    <div id="valid-amount" style=" width:60%; padding:0.2rem;font-weight: bolder; color:darkred;  font-size: larger; text-align: center;"></div>
+    <br/>
+    <br/>
+    <div style="font-weight: bold;">Return Change</div>
+    <br/>
+    <table style="width:30%">
+        <tr>
+          <th>No.of Notes</th>
+          <th>Notes</th> 
+        </tr>
+        <tr>
+          <td id="twothousand"></td>
+          <td>2000</td>
+        </tr>
+        <tr>
+          <td id="fivehundred"></td>
+          <td>500</td>
+        </tr>
+        <tr>
+          <td id="hundred"></td>
+          <td>100</td>
+        </tr>
+        <tr>
+            <td id="twenty"></td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td id="ten"></td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td id="five"></td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td id="one"></td>
+            <td>1</td>
+        </tr>
+
+      </table>
+
+    </center>
+
+    </div>
+    <script src="script.js" type='text/javascript'></script>
+
+
+</body>
+</html>
