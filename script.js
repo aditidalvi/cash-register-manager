@@ -21,10 +21,74 @@ var five = document.querySelector('#five');
 var one = document.querySelector('#one');
 
 
-check.addEventListener('click',checkEventHandlers);
+//check.addEventListener('click',checkEventHandlers);
 
 
+function show1(){
 
+        if((bill_amount.value <= 0) ||  (isNaN(bill_amount.value)) || (bill_amount.value.length == 0) ){
+            valid.innerText = "Enter valid bill amount";
+            
+        }
+        else{
+        document.getElementById('show').style.display = 'block';
+        document.getElementById('show1').style.display = 'none';
+        document.getElementById('next').style.display = 'none';
+        valid.innerText = "";
+        
+        }
+}
+
+function show2(){
+    if((bill_amount.value <= 0) || (cashGiven.value <= 0) ||  (isNaN(bill_amount.value)) || (isNaN(cashGiven.value)) || (bill_amount.value.length == 0) || (cashGiven.value.length == 0)){
+        console.log("enter valid amount and cash given to continue ");
+        valid.innerText = "Enter valid bill amount and cash given to continue ";
+        document.getElementById('show1').style.display = 'none';
+        document.getElementById('next').style.display = 'none';
+        twoThousand.innerText = "";
+        fiveHundred.innerText = "";
+        hundred.innerText = "";
+        twenty.innerText = "";
+        ten.innerText = "";
+        five.innerText = "";
+        one.innerText="";
+    }
+    else if(parseInt(bill_amount.value) > parseInt(cashGiven.value)){
+        console.log("Cash is less than bill, please enter right amount")
+        valid.innerText = "Cash is less than bill, please enter right amount";
+        document.getElementById('show1').style.display = 'none';
+        document.getElementById('next').style.display = 'none';
+        twoThousand.innerText = "";
+        fiveHundred.innerText = "";
+        hundred.innerText = "";
+        twenty.innerText = "";
+        ten.innerText = "";
+        five.innerText = "";
+        one.innerText="";
+    }
+   
+    else if(cashGiven.value === bill_amount.value){
+        console.log('No amount should be returned ')
+        valid.innerText = 'No amount should be returned ';
+        document.getElementById('show1').style.display = 'none';
+        document.getElementById('next').style.display = 'none';
+        twoThousand.innerText = "";
+        fiveHundred.innerText = "";
+        hundred.innerText = "";
+        twenty.innerText = "";
+        ten.innerText = "";
+        five.innerText = "";
+        one.innerText="";
+    }
+    else{
+        checkEventHandler();
+        valid.innerText = "";
+        document.getElementById('next').style.display = 'none';
+        document.getElementById('show1').style.display = 'block';
+    }
+}
+
+/*
 function checkEventHandlers(){
     if((bill_amount.value < 0) || (cashGiven.value < 0) ||  (isNaN(bill_amount.value)) || (isNaN(cashGiven.value)) || (bill_amount.value.length == 0)){
         console.log("enter valid amount and cash given to continue ");
@@ -64,7 +128,7 @@ function checkEventHandlers(){
         checkEventHandler();
         valid.innerText = "";
     }
-}
+}*/
 
 function checkEventHandler(){
     var fiveHundredCount =0 ,twoThousandCount = 0,hundredCount = 0,twentyCount = 0 ,tenCount=0 ,fiveCount =0 ,oneCount = 0;

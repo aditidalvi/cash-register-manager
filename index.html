@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    
     <title>Cash Register Manager</title>
     <style>
         table, th, td {
@@ -14,7 +15,8 @@
           font-family: 'Noto Sans';
           text-align: center;
           font-weight: bold;
-         background-color: seashell;
+        background-color: white;
+         color: black;
         }
 
         input{
@@ -25,17 +27,19 @@
           display: block;
           color:black;
           text-align: center;
-          font-size: large;
+          font-size: medium;
           font-weight: 600;
          
         }
 
         .container{
-          width:80%;
+          width:50%;
           margin: 2rem auto;
-          background-color:mediumseagreen;
+          background-color: #064e3b;
+          color:white;
+          /*background-color:mediumseagreen;*/
           padding: 2rem;
-          font-size: large;
+          font-size: medium;
           font-family: 'Noto Sans','sans-serif';
  
           
@@ -59,7 +63,14 @@
           font-weight: bold;
         }
 
-       
+        .hide{
+    display: none;
+}
+       @media screen and (max-width:700px) {
+         .container{
+           width: 80%;
+         }
+       }
 
         </style>
 </head>
@@ -70,16 +81,22 @@
     <h3>Enter the bill amount and cash given by the customer and know minimum number of notes to return.</h3>
     <br/>
     <p style="font-weight: bold; ">Bill Amount:</p>
-    <input id="bill-amount" type="text">
+    <input id="bill-amount" type="number">
+    <button onclick="show1()" id="next"> Next </button>
     <br/>
-    <p style="font-weight: bold;">Cash Given:</p>
-    <input id="cash-given" type="text">
-    <button id="check">Check</button>
+    <div id="show" class="hide">
+      <p style="font-weight: bold;">Cash Given:</p>
+    <input id="cash-given" type="number">
+    <button id="check" onclick="show2()">Check</button>
     <br/>
-    <div id="valid-amount" style=" width: 60%; padding:0.2rem;font-weight: bolder; color:red;  font-size: larger; text-align: center;"></div>
+    
     <br/>
+    </div>
+    <div id="valid-amount" style=" width: 60%; padding:0.2rem;font-weight: bolder; color:white;  font-size: larger; text-align: center;"></div>
+    
     <br/>
-    <div style="font-weight: bold;">Return Change</div>
+    <div id="show1" class="hide">
+      <div style="font-weight: bold; font-size: large;">Return Change</div>
     <br/>
     <table style="width:30%">
         <tr>
@@ -117,6 +134,8 @@
 
       </table>
 
+    </div>
+    
     </center>
 
     </div>
